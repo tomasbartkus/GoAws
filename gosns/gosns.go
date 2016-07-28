@@ -63,6 +63,10 @@ func init() {
 	SnsErrors["TopicExists"] = err3
 }
 
+func ResetSyncTopics() {
+	SyncTopics.Topics = make(map[string]*Topic)
+}
+
 func ListTopics(w http.ResponseWriter, req *http.Request) {
 	content := req.FormValue("ContentType")
 
